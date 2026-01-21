@@ -97,7 +97,7 @@ function Hero() {
           <div className="mt-4 flex flex-wrap gap-4">
             
             <a
-              href="/Michael_McIntosh_-_Software_Engineer.pdf" 
+              href="/Michael_McIntosh_SWE1.pdf" 
               target="_blank"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-100 transition-colors hover:bg-slate-50 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
             > 
