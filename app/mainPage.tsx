@@ -1,6 +1,7 @@
-import { Anchor, Briefcase, GraduationCap, Goal, Github, Linkedin, Mail, MapPin, Download, Terminal, Brain, Code2, Database, Cloud, Smartphone, ExternalLink } from "lucide-react";
+import { Anchor, Briefcase, GraduationCap, Goal, MapPin, Download, Terminal, Brain, Code2, Database, Cloud, Smartphone, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaAppStoreIos, FaGooglePlay, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 // Brand Icons (React Icons - Simple Icons pack)
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiJavascript, SiVuedotjs,
@@ -30,7 +31,7 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-10 md:pt-32 md:pb-16">
+    <section className="relative overflow-hidden pt-20 pb-10 md:pt-10 md:pb-16">
       <div className="mx-auto max-w-5xl px-4">
         <div className="flex flex-col gap-6 md:items-start">
           
@@ -61,33 +62,45 @@ function Hero() {
             </div>
             
             {/* Socials */}
-            <div className="flex items-center gap-4">
-              <Link href="https://github.com/yourusername" target="_blank" className="hover:text-blue-600 transition-colors">
-                <Github className="h-5 w-5" />
-              </Link>
-              <Link href="https://linkedin.com/in/yourusername" target="_blank" className="hover:text-blue-600 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link href="mailto:michaeldmc58@gmail.com" className="hover:text-blue-600 transition-colors">
-                <Mail className="h-5 w-5" />
-              </Link>
-            </div>
+            <div className="flex items-center gap-3">
+  <Link
+    href="https://github.com/mikemac15"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="GitHub"
+    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white text-slate-900 transition hover:border-white/20 hover:bg-white/10 hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+  >
+    <FaGithub className="h-5 w-5" />
+  </Link>
+
+  <Link
+    href="https://linkedin.com/in/michaeldmcintosh15"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="LinkedIn"
+    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white text-blue-400 transition hover:border-white/20 hover:bg-white/10 hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+  >
+    <FaLinkedin className="h-5 w-5" />
+  </Link>
+
+  <Link
+    href="mailto:michaeldmc58@gmail.com"
+    aria-label="Email"
+    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white text-red-500 transition hover:border-white/20 hover:bg-white/10 hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+  >
+    <FaEnvelope className="h-5 w-5" />
+  </Link>
+</div>
           </div>
 
           {/* CTA Buttons */}
           <div className="mt-4 flex flex-wrap gap-4">
-            <Link
-              href="#projects" // anchors to your projects section
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
-            >
-              View My Work
-            </Link>
             
             <a
-              href="/Michael_McIntosh_SDE.pdf" 
+              href="/Michael_McIntosh_-_Software_Engineer.pdf" 
               target="_blank"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
-            >
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-100 transition-colors hover:bg-slate-50 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+            > 
               <Download className="mr-2 h-4 w-4" />
               Download Resume
             </a>
@@ -109,8 +122,9 @@ const projects: Project[] = [
     tags: ["Flutter", "Firebase", "RevenueCat", "GCP"],
     description:
       "A production-grade cross-platform app featuring real-time multiplayer scoring and GPS context. Implemented atomic transactions for data integrity and RevenueCat for subscription management.",
-    href: "https://apps.apple.com/us/app/golf-gooder", // Placeholder
-    github: "https://github.com/yourusername/golf-gooder", // Placeholder
+    appStore: "https://apps.apple.com/us/app/golf-gooder/id6755160661",
+    playStore: "https://play.google.com/store/apps/details?id=com.mikemac.golfgooder",
+    
     imageSrc: "/images/projects/gg.png",
   },
   {
@@ -118,16 +132,17 @@ const projects: Project[] = [
     tags: ["Flutter", "Clean Architecture", "EXIF Data"],
     description:
       "Built a resilient offline-first journal using the Repository pattern. Features complex Firestore composite indexes for sub-second filtering and automatic EXIF metadata extraction.",
-    href: "https://your-link.com",
+    href: "https://photojournal-a784e.firebaseapp.com/",
     github: "https://github.com/MikeMac15/flutter_journal",
-    imageSrc: "/images/projects/photojournal.png",
+    picFit: 'contain',
+    imageSrc: "/images/projects/journal.png",
   },
   {
     title: "Screenshot Cleaner AI",
     tags: ["Python", "PyTorch", "ONNX Runtime", "MobileNetV3"],
     description:
       "Engineered a custom edge-AI solution to detect screenshots locally on-device. Optimized MobileNetV3 for mobile inference, ensuring 0ms latency and total user privacy without cloud API calls.",
-    href: "https://your-link.com",
+  
     github: "https://github.com/MikeMac15/Junk_Photo_Cleanser_CVSD",
     imageSrc: "/images/projects/cvsd.png",
   },
@@ -136,8 +151,8 @@ const projects: Project[] = [
     tags: ["Python", "Alpaca API", "Pandas", "Docker"],
     description:
       "Automated trading bot featuring backtesting engines and risk-management controls. Processes financial data streams to execute strategies with minimized latency.",
-    href: "https://your-link.com",
-    imageSrc: "/images/projects/algotrader.png",
+    // href: "https://your-link.com",
+    imageSrc: "/images/projects/algoBot.png",
   },
 ];
 
@@ -167,8 +182,11 @@ export type Project = {
   title: string;
   tags: string[];
   description: string;
-  href: string;
-  github?: string;
+  picFit?: string | undefined;
+  href?: string | undefined;
+  appStore?: string | undefined;
+  playStore?: string | undefined;
+  github?: string | undefined;
   imageSrc: string;
 };
 
@@ -179,7 +197,7 @@ export function ProjectCard({
   project: Project;
   reverse?: boolean;
 }) {
-  const { title, tags, description, href, github, imageSrc } = project;
+  const { title, tags, description, href, github, imageSrc, appStore, playStore, picFit } = project;
 
   return (
     <div
@@ -190,11 +208,12 @@ export function ProjectCard({
       ].join(" ")}
     >
       {/* Image Side */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-100 md:aspect-[4/3] lg:aspect-[16/10]">
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-black md:aspect-[4/3] lg:aspect-[16/10]">
         <Image
           src={imageSrc}
           alt={`${title} preview`}
           fill
+          style={{ objectFit: picFit ? picFit as 'contain' | 'cover' : 'cover' }}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(min-width: 768px) 50vw, 100vw"
           priority={false}
@@ -222,17 +241,41 @@ export function ProjectCard({
         </div>
 
         <p className="text-base leading-relaxed text-slate-600">{description}</p>
+            
+<div className="flex flex-wrap items-center gap-4 pt-2">
+  {/* Main "Visit" Button */}
+  {href && (
+    <Link
+      href={href}
+      target="_blank"
+      className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-slate-700 hover:gap-3"
+    >
+      Live Demo
+      <ExternalLink className="h-4 w-4" />
+    </Link>
+  )}
 
-        <div className="flex flex-wrap items-center gap-4 pt-2">
-          {/* Main "Visit" Button */}
-          <Link
-            href={href}
-            target="_blank"
-            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-slate-700 hover:gap-3"
-          >
-            Live Demo
-            <ExternalLink className="h-4 w-4" />
-          </Link>
+  {/* App Store Buttons */}
+  {appStore && (
+            <Link
+              href={appStore}
+              target="_blank"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-slate-700 hover:gap-3"
+            >
+              <FaAppStoreIos className="h-4 w-4" />
+              App Store
+            </Link>
+          )}
+          {playStore && (
+            <Link
+              href={playStore}
+              target="_blank"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-slate-700 hover:gap-3"
+            >
+              <FaGooglePlay className="h-4 w-4" />
+              Play Store
+            </Link>
+          )}
 
           {/* Secondary "Code" Button - critical for engineers */}
           {github && (
@@ -241,7 +284,7 @@ export function ProjectCard({
               target="_blank"
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
             >
-              <Github className="h-4 w-4" />
+              <FaGithub className="h-4 w-4" />
               Source Code
             </Link>
           )}
@@ -512,23 +555,23 @@ export function Footer() {
         {/* Social Links */}
         <div className="flex gap-6">
           <Link
-            href="https://github.com/yourusername"
+            href="https://github.com/mikemac15"
             target="_blank"
             className="group flex flex-col items-center gap-1"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors group-hover:bg-slate-900 group-hover:text-white">
-              <Github className="h-5 w-5" />
+              <FaGithub className="h-5 w-5" />
             </div>
             <span className="text-xs font-medium text-slate-500">GitHub</span>
           </Link>
 
           <Link
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/michaeldmcintosh15"
             target="_blank"
             className="group flex flex-col items-center gap-1"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedin className="h-5 w-5" />
             </div>
             <span className="text-xs font-medium text-slate-500">LinkedIn</span>
           </Link>
@@ -538,7 +581,7 @@ export function Footer() {
             className="group flex flex-col items-center gap-1"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
-              <Mail className="h-5 w-5" />
+              <FaEnvelope className="h-5 w-5" />
             </div>
             <span className="text-xs font-medium text-slate-500">Email</span>
           </Link>
