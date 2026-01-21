@@ -1,6 +1,7 @@
 // app/page.tsx
-import MainPage from "./mainPage";
+import RootLayout from "./layout";
+import Home from "./mainPage";
 
 export default function Page() {
-  return <MainPage />;
+  return <RootLayout children={<Home />} />;
 }

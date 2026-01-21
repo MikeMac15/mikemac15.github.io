@@ -70,23 +70,24 @@ function SiteHeader() {
 }
 
 export default function RootLayout({
-  children,
+  
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <SiteHeader />
+        
 
-        <main>
+     <main className="flex min-h-screen flex-col">
+          <SiteHeader />
           <Home />
-          {children}
+          
         </main>
-
-        <footer>
+     <footer>
           <Footer />
-        </footer>
+     </footer>
+
       </body>
     </html>
   );
